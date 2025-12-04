@@ -54,10 +54,10 @@
   <section class="section team-section">
     <div class="container">
 
-      <!-- TRABAJADOR 1 -->
+      <!-- CARMEN -->
       <div class="team-member">
         <div class="team-photo">
-          <img src="img/carmenPrueba.jpeg" alt="Foto miembro del equipo">
+          <img src="img/carmen.jpeg" alt="Foto Carmen" onclick="openModal(this.src)">
         </div>
         <div class="team-info">
           <h2 class="team-name">Lda. Mª del Carmen Robina Hidalgo</h2>
@@ -69,27 +69,27 @@
         </div>
       </div>
 
-      <!-- TRABAJADOR 2 -->
+      <!-- PALOMA -->
       <div class="team-member">
         <div class="team-photo">
-          <img src="https://via.placeholder.com/300x300/C4B79E/FFFFFF?text=Foto" alt="Foto miembro del equipo">
+          <img src="img/paloma.jpeg" alt="Foto Paloma" onclick="openModal(this.src)">
         </div>
         <div class="team-info">
-          <h2 class="team-name">Nombre del trabajador</h2>
+          <h2 class="team-name">Paloma</h2>
           <p>
-            Especialista en atención al público y dermocosmética. Destaca por su trato amable y su
+            Farmacéutica. Especialista en atención al público y dermocosmética. Destaca por su trato amable y su
             capacidad para explicar de manera sencilla cómo sacar el máximo partido a cada producto.
           </p>
         </div>
       </div>
 
-      <!-- TRABAJADOR 3 -->
+      <!-- MAMEN -->
       <div class="team-member">
         <div class="team-photo">
-          <img src="https://via.placeholder.com/300x300/7A8767/FFFFFF?text=Foto" alt="Foto miembro del equipo">
+          <img src="https://via.placeholder.com/300x300/7A8767/FFFFFF?text=Foto" alt="Foto miembro del equipo" onclick="openModal(this.src)">
         </div>
         <div class="team-info">
-          <h2 class="team-name">Nombre del trabajador</h2>
+          <h2 class="team-name">Mamen</h2>
           <p>
             Experto en atención farmacéutica y seguimiento de tratamientos. Siempre dispuesto a
             resolver dudas y ofrecer recomendaciones prácticas adaptadas a las necesidades de cada
@@ -104,6 +104,22 @@
  <div id="site-footer"></div>
 <script src="footer.js"></script>
 
+<!-- MODAL PARA ZOOM DE IMÁGENES -->
+<div id="imgModal" class="modal" onclick="closeModal()">
+  <span class="modal-close">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
+
+<script>
+function openModal(src) {
+  document.getElementById("imgModal").style.display = "block";
+  document.getElementById("modalImg").src = src;
+}
+
+function closeModal() {
+  document.getElementById("imgModal").style.display = "none";
+}
+</script>
 
 </body>
 </html>

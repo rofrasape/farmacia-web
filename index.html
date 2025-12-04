@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Farmacia Lda. Mª del Carmen Robina Hidalgo | Tu farmacia en Señoría de Illescas</title>
+  <meta name="description" content="Farmacia de nueva apertura dirigida por la Lda. Mª del Carmen Robina Hidalgo. Noticias, promociones y consejos farmacéuticos para cuidar de tu salud." />
+
+  <!-- Fuente -->
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link href="https://fonts.bunny.net/css?family=montserrat:300,400,500,600,700" rel="stylesheet" />
+
+  <!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+<link rel="shortcut icon" href="img/favicon.ico">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="whatsapp-container"></div>
+<script src="whatsapp.js"></script>
+
+  <!-- BARRA SUPERIOR -->
+  <div id="top-bar-container"></div>
+  <script src="topbar.js"></script>
+
+  <div id="site-header"></div>
+  <script src="header.js"></script>
+  
+  <!-- HERO / PORTADA -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <h1>Tu nueva farmacia de confianza en Señorío de Illescas</h1>
+        <p>
+          La Farmacia de la Lda. Mª del Carmen Robina Hidalgo abre sus puertas para
+          ofrecerte un espacio de salud cercano, profesional y actualizado, con
+          noticias, promociones y consejos farmacéuticos.
+        </p>
+        <div class="hero-buttons">
+          <a href="#promociones" class="btn btn-primary">Ver promociones</a>
+          <a href="#noticias" class="btn btn-secondary">Últimas noticias</a>
+        </div>
+        <ul class="hero-list">
+          <li>✔ Atención farmacéutica personalizada</li>
+          <li>✔ Promociones de apertura y campañas de salud</li>
+          <li>✔ Consejos para el cuidado diario de tu salud</li>
+        </ul>
+      </div>
+
+      <div class="hero-side">
+        <div class="hero-card">
+          <h2>Consejo farmacéutico de la semana</h2>
+          <p>
+            No tomes medicación por tu cuenta ni recomiendes a otros sin consultar.
+            Tu farmacéutico puede ayudarte a evitar interacciones y efectos
+            indeseados.
+          </p>
+          <span class="hero-card-tag">Consejo de tu farmacéutica</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CARRUSEL DE OFERTAS -->
+<section class="carousel-section">
+  <div class="carousel-container">
+
+    <!-- Botón izquierda -->
+    <button class="carousel-btn prev">&#10094;</button>
+
+    <div class="carousel-track">
+
+      <!-- Imagen 1 -->
+      <div class="carousel-slide">
+        <img src="img/GHPrueba.png" 
+             alt="Colección Gema Herrerias" />
+      </div>
+
+      <!-- Imagen 2 -->
+      <div class="carousel-slide">
+        <img src="img/vitaminasPrueba.png" 
+             alt="Revisión de tensión gratuita" />
+      </div>
+
+      <!-- Imagen 3 -->
+      <div class="carousel-slide">
+        <img src="https://via.placeholder.com/1100x380/7A8767/FFFFFF?text=Promoci%C3%B3n+Vitaminas+2x1" 
+             alt="Promoción vitaminas 2x1" />
+      </div>
+
+    </div>
+
+    <!-- Botón derecha -->
+    <button class="carousel-btn next">&#10095;</button>
+  </div>
+</section>
+
+<!-- BUSCADOR INTELIGENTE -->
+<section class="search-section">
+  <div class="container search-container">
+    <div class="search-header">
+      <h2>¿Qué estás buscando?</h2>
+      <p>Encuentra rápidamente servicios, consejos, horarios y secciones de la farmacia.</p>
+    </div>
+
+    <div class="search-box">
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Ej.: tensión, dermocosmética, infantil, horarios, antibióticos..."
+      />
+      <button id="search-button" class="btn btn-primary">
+        <img src="img/search-icon.svg" alt="" class="search-icon">
+      </button>
+
+    </div>
+
+    <div id="search-results" class="search-results"></div>
+  </div>
+</section>
+
+<!-- SCRIPT DEL CARRUSEL -->
+<script>
+  const track = document.querySelector('.carousel-track');
+  const slides = Array.from(track.children);
+  const nextButton = document.querySelector('.next');
+  const prevButton = document.querySelector('.prev');
+
+  let currentIndex = 0;
+  let interval = setInterval(moveToNextSlide, 4000);
+
+  function moveToSlide(index) {
+    track.style.transform = 'translateX(' + (-index * 100) + '%)';
+    currentIndex = index;
+  }
+
+  function moveToNextSlide() {
+    let newIndex = currentIndex + 1;
+    if (newIndex >= slides.length) newIndex = 0;
+    moveToSlide(newIndex);
+  }
+
+  function moveToPrevSlide() {
+    let newIndex = currentIndex - 1;
+    if (newIndex < 0) newIndex = slides.length - 1;
+    moveToSlide(newIndex);
+  }
+
+  nextButton.addEventListener('click', () => {
+    clearInterval(interval);
+    moveToNextSlide();
+    interval = setInterval(moveToNextSlide, 4000);
+  });
+
+  prevButton.addEventListener('click', () => {
+    clearInterval(interval);
+    moveToPrevSlide();
+    interval = setInterval(moveToNextSlide, 4000);
+  });
+</script>
+
+<script>
+  // Índice de contenido para el buscador
+  const searchIndex = [
+    {
+      title: "Conócenos",
+      category: "Farmacia",
+      url: "conocenos.html",
+      description: "Información sobre la farmacéutica titular y el equipo, valores y forma de trabajar.",
+      tags: ["equipo", "farmacéutica", "personal", "valores", "conocenos"]
+    },
+    {
+      title: "Farmacia abierta",
+      category: "Farmacia",
+      url: "farmacia-abierta.html",
+      description: "Horarios, farmacias de guardia cercanas y ubicación de la farmacia.",
+      tags: ["horario", "guardia", "ubicacion", "como llegar", "farmacia abierta"]
+    },
+    {
+      title: "Consejos farmacéuticos",
+      category: "Farmacia",
+      url: "consejos.html",
+      description: "Artículos con recomendaciones sobre uso responsable de medicamentos y salud diaria.",
+      tags: ["consejos", "antibioticos", "medicacion", "uso correcto", "farmacia"]
+    },
+    {
+      title: "Control de salud",
+      category: "Servicios",
+      url: "servicio-control-salud.html",
+      description: "Medición de tensión, control de peso, seguimiento básico de parámetros de salud.",
+      tags: ["tension", "control", "salud", "presion", "peso"]
+    },
+    {
+      title: "Análisis rápidos",
+      category: "Servicios",
+      url: "servicio-analisis-rapidos.html",
+      description: "Pruebas rápidas como glucosa, colesterol y otros parámetros en la farmacia.",
+      tags: ["analisis", "glucosa", "colesterol", "pruebas rapidas"]
+    },
+    {
+      title: "Dermocosmética",
+      category: "Servicios",
+      url: "servicio-dermocosmetica.html",
+      description: "Asesoramiento personalizado en cuidado de la piel, rostro y cuerpo.",
+      tags: ["piel", "cremas", "dermocosmetica", "cosmetica", "rostro"]
+    },
+    {
+      title: "Atención farmacéutica",
+      category: "Servicios",
+      url: "servicio-atencion-farmaceutica.html",
+      description: "Consulta con la farmacéutica para resolver dudas sobre tratamientos y medicación.",
+      tags: ["consulta", "atencion", "farmaceutica", "dudas", "tratamientos"]
+    },
+    {
+      title: "Nutrición y bienestar",
+      category: "Servicios",
+      url: "servicio-nutricion.html",
+      description: "Consejo sobre suplementos, vitaminas y hábitos saludables.",
+      tags: ["vitaminas", "suplementos", "nutricion", "bienestar"]
+    },
+    {
+      title: "Área infantil",
+      category: "Servicios",
+      url: "servicio-infantil.html",
+      description: "Productos y consejos para el cuidado del bebé y la salud infantil.",
+      tags: ["bebe", "infantil", "ninos", "pediatria", "cuidado infantil"]
+    },
+    {
+      title: "Cita: asesoría dermocosmética",
+      category: "Citas",
+      url: "cita-asesoria-dermocosmetica.html",
+      description: "Reserva una cita para revisar tu rutina de cuidado de la piel.",
+      tags: ["cita", "dermocosmetica", "asesoria", "piel"]
+    },
+    {
+      title: "Cita: consulta farmacéutica",
+      category: "Citas",
+      url: "cita-consulta-farmaceutica.html",
+      description: "Consulta individual con la farmacéutica sobre tu medicación.",
+      tags: ["cita", "consulta", "farmaceutica", "medicacion"]
+    },
+    {
+      title: "Cita: revisión nutricional",
+      category: "Citas",
+      url: "cita-revision-nutricional.html",
+      description: "Espacio para revisar suplementos, vitaminas y hábitos nutricionales.",
+      tags: ["cita", "nutricion", "vitaminas", "suplementos"]
+    }
+  ];
+
+  function normalizarTexto(texto) {
+    return texto
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, ""); // quita acentos
+  }
+
+  function buscarContenido(termino) {
+    const terminoNormalizado = normalizarTexto(termino.trim());
+    if (!terminoNormalizado) return [];
+
+    return searchIndex.filter(item => {
+      const textoBuscable = normalizarTexto(
+        item.title + " " + item.description + " " + item.tags.join(" ")
+      );
+      return textoBuscable.includes(terminoNormalizado);
+    });
+  }
+
+  function mostrarResultados(resultados) {
+    const resultsContainer = document.getElementById("search-results");
+    resultsContainer.innerHTML = "";
+
+    if (!resultados.length) {
+      resultsContainer.innerHTML =
+        '<div class="search-results-empty">No se han encontrado resultados. Prueba con otra palabra como "tensión", "dermocosmética", "infantil"…</div>';
+      return;
+    }
+
+    resultados.slice(0, 8).forEach(item => {
+      const div = document.createElement("div");
+      div.className = "search-result-item";
+      div.innerHTML = `
+        <p class="search-result-title">${item.title}</p>
+        <p class="search-result-category">${item.category}</p>
+        <p class="search-result-description">${item.description}</p>
+      `;
+      div.addEventListener("click", () => {
+        window.location.href = item.url;
+      });
+      resultsContainer.appendChild(div);
+    });
+  }
+
+  function manejarBusqueda() {
+    const input = document.getElementById("search-input");
+    const term = input.value;
+    const resultados = buscarContenido(term);
+    mostrarResultados(resultados);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const input = document.getElementById("search-input");
+    const button = document.getElementById("search-button");
+
+    if (!input || !button) return;
+
+    button.addEventListener("click", manejarBusqueda);
+
+    input.addEventListener("keydown", e => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        manejarBusqueda();
+      }
+    });
+  });
+</script>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>¿Qué encontrarás en nuestra farmacia?</h2>
+        <p>
+          Un equipo dispuesto a escucharte y acompañarte en todo lo relacionado con tu
+          medicación, tu bienestar y el de tu familia.
+        </p>
+      </div>
+
+      <div class="cards-grid">
+        <article class="card">
+          <h3>Atención farmacéutica cercana</h3>
+          <p>
+            Resolveremos tus dudas sobre tratamientos, interacciones entre
+            medicamentos y uso correcto de cada producto.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Servicios y campañas de salud</h3>
+          <p>
+            Control de tensión, revisiones periódicas, programas de prevención y
+            campañas de salud a lo largo del año.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Noticias y consejos</h3>
+          <p>
+            Publicaremos noticias relevantes, recomendaciones y consejos prácticos
+            para ayudarte a cuidar mejor tu salud.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMOCIONES -->
+  <section id="promociones" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Promociones de apertura</h2>
+        <p>
+          Para darte la bienvenida, hemos preparado varias promociones especiales en
+          productos seleccionados y servicios de salud.
+        </p>
+      </div>
+
+      <div class="cards-grid">
+        <article class="card promo-card">
+          <span class="promo-badge">Apertura</span>
+          <h3>-10% en dermocosmética seleccionada</h3>
+          <p>
+            Descuento especial en una selección de productos de cuidado facial y
+            corporal durante nuestro periodo de apertura.
+          </p>
+          <p class="promo-footer">Consulta condiciones en la farmacia.</p>
+        </article>
+
+        <article class="card promo-card">
+          <span class="promo-badge">Salud</span>
+          <h3>Medición de tensión gratuita</h3>
+          <p>
+            Te ofrecemos la medición de tensión sin coste para ayudarte a
+            controlar tu salud cardiovascular.
+          </p>
+          <p class="promo-footer">Sin cita previa, durante el horario de apertura.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOTICIAS Y CONSEJOS RESUMIDOS -->
+  <section id="noticias" class="section">
+    <div class="container two-columns">
+      <div class="column">
+        <h2>Noticias de la farmacia</h2>
+
+        <article class="mini-card">
+          <h3>Apertura de la Farmacia</h3>
+          <p>
+            Inauguramos la farmacia para ofrecerte un servicio cercano,
+            profesional y adaptado a tus necesidades de salud.
+          </p>
+          <span class="mini-card-meta">Publicado el 01/01/2026</span>
+        </article>
+
+        <article class="mini-card">
+          <h3>Nuevos servicios próximamente</h3>
+          <p>
+            Estamos preparando nuevos servicios para que tu visita a la farmacia
+            sea aún más completa y útil.
+          </p>
+          <span class="mini-card-meta">Próximamente</span>
+        </article>
+      </div>
+
+      <div id="consejos" class="column">
+        <h2>Último consejo farmacéutico</h2>
+
+        <article class="mini-card">
+          <h3>Uso responsable de antibióticos</h3>
+          <p>
+            No tomes antibióticos sin receta y sigue siempre la pauta indicada.
+            El uso inadecuado favorece la aparición de resistencias.
+          </p>
+          <span class="mini-card-meta">Consejo de tu farmacéutica</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO / PIE -->
+ <div id="site-footer"></div>
+<script src="footer.js"></script>
+
+</body>
+</html>

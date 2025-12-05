@@ -1454,3 +1454,136 @@ img {
   font-weight: bold;
   cursor: pointer;
 }
+/* ====== SECCIÓN FARMACIA ABIERTA: MAPA + ICONOS ====== */
+
+.farmacia-abierta {
+  padding: 4rem 0;
+}
+
+.farmacia-abierta-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  align-items: stretch;
+}
+
+/* Columna del mapa */
+.map-wrapper {
+  flex: 1 1 320px;
+  min-height: 320px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.10);
+  background: #f3f7f4;
+}
+
+.map-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Columna de información */
+.map-info {
+  flex: 1 1 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.map-info h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.map-intro {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 0 0.5rem;
+}
+
+/* Bloques con icono */
+.map-block {
+  padding: 1rem 1.1rem;
+  border-radius: 14px;
+  background: #f7fbf8;
+  border: 1px solid #e0efe6;
+}
+
+.map-block + .map-block {
+  margin-top: 0.5rem;
+}
+
+.map-block-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.3rem;
+}
+
+.map-block-header h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.map-block p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.map-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+/* Lista "cómo llegar" */
+.map-howto {
+  margin: 0.25rem 0 0;
+  padding-left: 1.2rem;
+  font-size: 0.95rem;
+}
+
+.map-howto li {
+  margin-bottom: 0.25rem;
+}
+
+/* Botón "Cómo llegar" */
+.btn-mapa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+  padding: 0.9rem 1.6rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  background: #1e8b4d;        /* ajusta al verde corporativo de tu web */
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.btn-mapa:hover {
+  background: #16693a;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
+}
+
+/* Responsive: stack en móvil */
+@media (max-width: 768px) {
+  .farmacia-abierta-inner {
+    flex-direction: column;
+  }
+
+  .map-wrapper {
+    min-height: 260px;
+  }
+
+  .map-info h2 {
+    font-size: 1.6rem;
+  }
+}

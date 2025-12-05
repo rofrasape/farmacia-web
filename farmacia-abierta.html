@@ -26,19 +26,74 @@
   </section>
 
   <!-- HORARIO GENERAL -->
-  <section class="section">
-    <div class="container horario-block">
+  <section id="farmacia-abierta" class="section farmacia-abierta">
+  <div class="container farmacia-abierta-inner">
+    
+    <!-- Columna izquierda: mapa -->
+    <div class="map-wrapper">
+      <iframe
+        title="Mapa de cómo llegar a Farmacia de Carmen"
+        src="https://www.google.com/maps?q=Calle+Alfredo+Bryce+Echenique+10,+45200+Illescas,+Toledo&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen>
+      </iframe>
+    </div>
 
-      <h2 class="section-title">Nuestro horario</h2>
+    <!-- Columna derecha: información y botón -->
+    <div class="map-info">
+      <h2>Farmacia Abierta</h2>
+      <p class="map-intro">
+        Ven a visitarnos a nuestra farmacia en el Señorío de Illescas.  
+        Te lo ponemos fácil para llegar:
+      </p>
 
-      <div class="horario-box">
-        <p><strong>Lunes a Viernes:</strong> 9:00 – 21:00</p>
-        <p><strong>Sábados:</strong> 9:30 – 14:00</p>
-        <p><strong>Domingos y festivos:</strong> cerrado (excepto guardias)</p>
+      <div class="map-block">
+        <div class="map-block-header">
+          <img src="images/icon-mapa.svg" alt="Icono mapa" class="map-icon">
+          <h3>Cómo encontrarnos</h3>
+        </div>
+        <p>
+          C/ Alfredo Bryce Echenique 10<br>
+          45200 Illescas (Señorío de Illescas)
+        </p>
       </div>
 
+      <div class="map-block">
+        <div class="map-block-header">
+          <img src="img/horario.svg" alt="Icono horario" class="map-icon">
+          <h3>Horario</h3>
+        </div>
+        <p>
+          Lunes a viernes: 9:00 – 14:00 y 17:00 – 20:00<br>
+          Sábados: 9:00 – 14:00
+        </p>
+      </div>
+
+      <div class="map-block">
+        <div class="map-block-header">
+          <img src="img/como_llegar.svg" alt="Icono cómo llegar" class="map-icon">
+          <h3>Tu visita</h3>
+        </div>
+        <ul class="map-howto">
+          <li>Aparcamiento sencillo en las calles cercanas.</li>
+          <li>Accesible para carritos y personas con movilidad reducida.</li>
+          <li>Zona residencial tranquila y cómoda.</li>
+        </ul>
+      </div>
+
+      <a
+        class="btn-mapa"
+        href="https://www.google.com/maps/dir/?api=1&destination=Farmacia+de+Carmen,+Calle+Alfredo+Bryce+Echenique+10,+45200+Illescas,+Toledo"
+        target="_blank"
+        rel="noopener">
+        🧭 Cómo llegar desde tu ubicación
+      </a>
     </div>
-  </section>
+
+  </div>
+</section>
+
 
   <!-- FARMACIAS DE GUARDIA -->
   <section class="section section-alt">

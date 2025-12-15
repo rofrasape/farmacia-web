@@ -1587,3 +1587,142 @@ img {
     font-size: 1.6rem;
   }
 }
+/* ============================
+   SUPLEMENTOS IVB
+   ============================ */
+
+.ivb-section {
+  background: #f8f7f4;
+}
+
+.ivb-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.2rem;
+  align-items: flex-start;
+}
+
+.ivb-block {
+  background: #ffffff;
+  border-radius: 1.1rem;
+  padding: 1.6rem 1.8rem;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+}
+
+.ivb-block-header h2 {
+  margin: 0 0 0.9rem;
+  color: var(--verde-logo);
+  font-size: 1.4rem;
+}
+
+.ivb-block-content p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 0.8rem;
+}
+
+/* Imágenes IVB */
+.ivb-block-media {
+  margin-bottom: 1rem;
+}
+
+.ivb-image-wrapper {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+  background: #f3f1eb;
+}
+
+.ivb-image-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Tarjetas de líneas de suplementos */
+.ivb-lines-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.8rem;
+  margin-top: 0.7rem;
+}
+
+.ivb-line-card {
+  background: #f6f5f1;
+  border-radius: 0.9rem;
+  padding: 0.8rem 1rem;
+  font-size: 0.93rem;
+}
+
+.ivb-line-card h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1rem;
+  color: var(--verde-logo);
+}
+
+/* Bloque CTA final */
+.ivb-cta-section {
+  background: #ffffff;
+}
+
+.ivb-cta-inner {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.ivb-cta-text {
+  flex: 2;
+}
+
+.ivb-cta-text h2 {
+  color: var(--verde-logo);
+  margin-top: 0;
+}
+
+.ivb-cta-text p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+.ivb-cta-side {
+  flex: 1;
+  min-width: 220px;
+}
+
+.ivb-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 0.6rem;
+}
+
+.ivb-cta-note {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .ivb-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ivb-block {
+    padding: 1.4rem 1.4rem;
+  }
+
+  .ivb-cta-inner {
+    flex-direction: column;
+  }
+
+  .ivb-cta-side {
+    width: 100%;
+  }
+}

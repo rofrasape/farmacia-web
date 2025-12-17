@@ -1768,3 +1768,18 @@ img {
   max-width: 220px;
   height: auto;
 }
+.ivb-logo {
+  text-align: center;
+  margin: 10px 0 35px;
+}
+
+.ivb-logo img {
+  max-width: 150px;
+  height: auto;
+  opacity: 0.95;
+}
+@media (min-width: 768px) {
+  .ivb-logo img {
+    max-width: 130px;
+  }
+}
